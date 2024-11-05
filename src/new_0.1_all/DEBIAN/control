@@ -1,0 +1,5 @@
+Package: new
+Version: 0.1
+Architecture: all
+Maintainer: raa <raa@mail.com>
+Description: test package

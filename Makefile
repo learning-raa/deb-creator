@@ -1,10 +1,22 @@
-help:
-	@cat Makefile
+arch = all
 
+help:
+	@nvim Makefile
 
 init:
-	echo "init ??"
+	@echo "init: $(pkg)_$(ver)_$(arch)"
+	@mkdir -v src/$(pkg)_$(ver)_$(arch)
+	@mkdir -v src/$(pkg)_$(ver)_$(arch)/DEBIAN
+	@echo "Package: $(pkg)" >> src/$(pkg)_$(ver)_$(arch)/DEBIAN/control
+	@echo "Version: $(ver)" >> src/$(pkg)_$(ver)_$(arch)/DEBIAN/control
+	@echo "Architecture: all" >> src/$(pkg)_$(ver)_$(arch)/DEBIAN/control
+	@echo "Maintainer: raa <raa@mail.com>" >> src/$(pkg)_$(ver)_$(arch)/DEBIAN/control
+	@echo "Description: test package" >> src/$(pkg)_$(ver)_$(arch)/DEBIAN/control
+	@echo "simple skeleton for <$(pkg)_$(ver)_$(arch)> ready"
 
+build:
+	@echo "build: $(pkg)_$(ver)_$(arch)"
+	@cd packages; fakeroot dpkg-deb --build ../src/$(pkg)_$(ver)_$(arch)
 
 
 # # # # # # # #
