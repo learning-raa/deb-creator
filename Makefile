@@ -17,6 +17,7 @@ init:
 build:
 	@echo "build: $(pkg)_$(ver)_$(arch)"
 	@fakeroot dpkg-deb --build src/$(pkg)_$(ver)_$(arch)
+	@mkdir -p packages
 	@mv -v src/$(pkg)_$(ver)_$(arch).deb packages/
 
 
