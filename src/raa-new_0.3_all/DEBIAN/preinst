@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "pre Install: 0.3"
