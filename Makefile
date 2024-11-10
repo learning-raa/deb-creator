@@ -1,7 +1,10 @@
 arch = all
 
-help:
+edit:
 	@nvim Makefile
+
+help:
+	@echo "usage: make build pkg=<pachage name> ver=<version> arch=<architecture>"
 
 init:
 	@echo "init: $(pkg)_$(ver)_$(arch)"
